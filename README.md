@@ -1,5 +1,5 @@
 # Employee-Directory
-Employee directory created using React 
+Employee directory created using React as well as the Random User API, the idea is for employees to be able to search for other employees by name. 
 
 ## Table of Contents
 
@@ -8,7 +8,7 @@ Employee directory created using React
 * [Contributing](#Contributing)
 
 ## React
-
+Uses React as a front-end framework, pulling in the Random User API using the Axios npm package. 
 
 ![screenshot of employee directory](./)
 
@@ -29,7 +29,7 @@ There is no need to install anything, to view the employee directory simply foll
 
 See deployed site here: [Deployed site]() 
 
-See repository here: [GitHub Repo]()
+See repository here: [GitHub Repo](https://github.com/JD-Jaramillo/Employee-Directory)
 
 ## Contributing
 
