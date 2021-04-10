@@ -1,10 +1,14 @@
-import React, { Component, component } from 'react';
+import React, { Component } from 'react';
+import Header from '../Header';
+import TableWithUsers from '../TableWithUsers';
+import SearchInput from '../SearchInput';
+import API from '../../input/API';
 
 
 class EmployeeDirectory extends Component {
     state = {
-        search= "",
-        results=[]
+        search: "",
+        results: []
     };
 
     componentDidMount() {
@@ -34,11 +38,9 @@ class EmployeeDirectory extends Component {
     render() {
         return (
             <>
-            <hero>
-                
-            </hero>
-            {/* Search Component */}
-            {/* Table with results Component */}
+                <Header />
+                <SearchInput />
+                <TableWithUsers results={this.state.results} />
             </>
         )
     }
