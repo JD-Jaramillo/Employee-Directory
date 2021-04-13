@@ -1,0 +1,9 @@
+.jumbotron {
+    background-color: rgb(13, 13, 66);
+    border-bottom: solid 8px maroon;
+    text-align: center;
+}
+
+.h1 {
+padding: 5px;
+}

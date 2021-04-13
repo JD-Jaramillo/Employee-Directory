@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css';
 
 function Header() {
     return (
-        <header className="jumbotron masthead bg-blue text-white border border-bottom-8 border-bottom-danger">
-            <h1>Employee Directory</h1>
+        <header className="jumbotron masthead text-white border">
+            <h1 className="h1">Employee Directory</h1>
             <p>Click on carrots to filter by name or use the search box to narrow your results</p>
         </header>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SearchInput(props) {
-    return(
+    return (
         <div className="container h-100">
             <div className="d-flex justify-content-center h-100">
                 <div className="searchbar">
@@ -12,14 +12,12 @@ function SearchInput(props) {
                         type="text"
                         name="search"
                         placeholder="Search by name"
-                        id="search"
-                    >
+                        id="search">
                     </input>
                 </div>
             </div>
         </div>
     )
-
 }
 
 export default SearchInput;
