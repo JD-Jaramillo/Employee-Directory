@@ -20,7 +20,6 @@ class EmployeeDirectory extends Component {
     }
 
     handler() {
-        // debugger
         const newArr = this.state.users.sort((a, b) => {
             if (a.name > b.name) {
                 return 1;
@@ -40,7 +39,7 @@ class EmployeeDirectory extends Component {
             .then(results => {
                 results.data.results.forEach(user => {
                     user.name = `${user.name.first} ${user.name.last}`;
-                    user.dob = user.dob.date.slice(0,10);
+                    user.dob = user.dob.date.slice(0, 10);
                     user.id = user.login.uuid;
                     user.picture = user.picture.thumbnail;
                 })
@@ -57,20 +56,22 @@ class EmployeeDirectory extends Component {
     };
 
     // When the form is submitted search the Random User API for "this.state.search"
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.searchRandomUser(this.state.name);
-    };
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     this.searchRandomUser(this.state.name);
+    // };
 
     render() {
         return (
             <>
                 <Header loadUsers={this.loadUsers} />
-                <SearchInput />
+                <SearchInput handleInputChange={this.handleInputChange} />
                 <TableWithUsers users={this.state.users} handler={this.handler} />
             </>
         )
     }
 };
+
+// name={this.state.name}
 
 export default EmployeeDirectory;
