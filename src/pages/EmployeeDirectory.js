@@ -40,7 +40,7 @@ class EmployeeDirectory extends Component {
             .then(results => {
                 results.data.results.forEach(user => {
                     user.name = `${user.name.first} ${user.name.last}`;
-                    user.dob = user.dob.date;
+                    user.dob = user.dob.date.slice(0,10);
                     user.id = user.login.uuid;
                     user.picture = user.picture.thumbnail;
                 })
@@ -65,7 +65,7 @@ class EmployeeDirectory extends Component {
     render() {
         return (
             <>
-                <Header />
+                <Header loadUsers={this.loadUsers} />
                 <SearchInput />
                 <TableWithUsers users={this.state.users} handler={this.handler} />
             </>

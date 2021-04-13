@@ -1,9 +1,10 @@
 import React from 'react';
+import './style.css';
 
 function SearchInput(props) {
     return (
         <div className="container h-100">
-            <div className="d-flex justify-content-center h-100">
+            <div className="search d-flex justify-content-center h-100">
                 <div className="searchbar">
                     <input
                         onChange={props.handleInputChange}
