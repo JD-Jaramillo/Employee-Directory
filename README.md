@@ -10,7 +10,7 @@ Employee directory created using React as well as the Random User API, the idea 
 ## React
 Uses React as a front-end framework, pulling in the Random User API using the Axios npm package. 
 
-![screenshot of employee directory](./)
+![screenshot of employee directory](./public/homepage.png)
 
 
 ## Requirements
@@ -27,7 +27,7 @@ Filter the users by at least one property.
 
 There is no need to install anything, to view the employee directory simply follow the link below. 
 
-See deployed site here: [Deployed site]() 
+See deployed site here: [Deployed site](https://jd-jaramillo.github.io/Employee-Directory/) 
 
 See repository here: [GitHub Repo](https://github.com/JD-Jaramillo/Employee-Directory)
 
