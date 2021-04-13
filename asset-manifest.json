@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/JD-Jaramillo/Employee-Directory/static/css/main.ca2e8c47.chunk.css",
+    "main.js": "/JD-Jaramillo/Employee-Directory/static/js/main.43c27efd.chunk.js",
+    "main.js.map": "/JD-Jaramillo/Employee-Directory/static/js/main.43c27efd.chunk.js.map",
+    "runtime-main.js": "/JD-Jaramillo/Employee-Directory/static/js/runtime-main.222a3acf.js",
+    "runtime-main.js.map": "/JD-Jaramillo/Employee-Directory/static/js/runtime-main.222a3acf.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/JD-Jaramillo/Employee-Directory/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.8b031137.chunk.js": "/JD-Jaramillo/Employee-Directory/static/js/2.8b031137.chunk.js",
+    "static/js/2.8b031137.chunk.js.map": "/JD-Jaramillo/Employee-Directory/static/js/2.8b031137.chunk.js.map",
+    "index.html": "/JD-Jaramillo/Employee-Directory/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/JD-Jaramillo/Employee-Directory/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.ca2e8c47.chunk.css.map": "/JD-Jaramillo/Employee-Directory/static/css/main.ca2e8c47.chunk.css.map",
+    "static/js/2.8b031137.chunk.js.LICENSE.txt": "/JD-Jaramillo/Employee-Directory/static/js/2.8b031137.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.222a3acf.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.8b031137.chunk.js",
+    "static/css/main.ca2e8c47.chunk.css",
+    "static/js/main.43c27efd.chunk.js"
+  ]
+}
