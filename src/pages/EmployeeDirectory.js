@@ -9,31 +9,69 @@ class EmployeeDirectory extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: "",
-            users: []
+            search: "",
+            filteredSearch: [],
+            users: [],
+            filteredUsers: [],
+            nameColumnClick: 0,
         };
         this.handler = this.handler.bind(this)
     }
-
+    // On load of page call the loadusers function to load the table with random users 
     componentDidMount() {
         this.loadUsers("");
     }
-
+    // This hanler is sorting the names on click by Ascending and then by Descending order
     handler() {
-        const newArr = this.state.users.sort((a, b) => {
-            if (a.name > b.name) {
-                return 1;
+        // Ascending 
+        const index = this.state.nameColumnClick + 1;
+        switch (index) {
+            case 1: {
+                this.setState({
+                    nameColumnClick: index
+                })
+                const newArr = this.state.users.sort((a, b) => {
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    if (a.name < b.name) {
+                        return -1;
+                    }
+                    return 0;
+                });
+                this.setState({
+                    filteredUsers: newArr
+                });
+                break;
             }
-            if (a.name < b.name) {
-                return -1;
+            // Descending
+            case 2: {
+                this.setState({
+                    nameColumnClick: index
+                })
+                const newArr = this.state.users.sort((a, b) => {
+                    if (a.name < b.name) {
+                        return 1;
+                    }
+                    if (a.name > b.name) {
+                        return -1;
+                    }
+                    return 0;
+                });
+                this.setState({
+                    filteredUsers: newArr
+                });
+                break;
             }
-            return 0;
-        });
-        this.setState({
-            users: newArr
-        });
+            default: {
+                this.setState({
+                    filteredUsers: [...this.state.users],
+                    nameColumnClick: 0
+                })
+            }
+        }
     }
-
+    // function that gets data from the API and then loops through each user to get the desired data back for the table 
     loadUsers = () => {
         API.users()
             .then(results => {
@@ -44,34 +82,42 @@ class EmployeeDirectory extends Component {
                     user.picture = user.picture.thumbnail;
                 })
                 this.setState({
-                    users: results.data.results
+                    users: results.data.results,
+                    filteredUsers: results.data.results
                 });
             })
     }
-
+    // Gets the value from the search input on the top of page, sets the value at state and then sends it to handlSearch function 
     handleInputChange = event => {
-        const name = event.target.name;
-        const value = event.target.value;
-        this.setState({ [name]: value })
+        // const search = event.target.search;
+        const value = event.target.value.toLowerCase();
+        this.setState({ search: value })
+        this.handleSearch(value);
     };
 
-    // When the form is submitted search the Random User API for "this.state.search"
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     this.searchRandomUser(this.state.name);
-    // };
+    // When the search value is passed on from the function above filter the array of names
+    handleSearch(query) {
+        console.log("value is being received", query)
+        const filteredUsersBySearch = [...this.state.users];
+        if (query.length > 0) {
+            let newSearchedArr = filteredUsersBySearch.filter(user => {
+                const empName = [user.name[0].toLowerCase(), user.name[1].toLowerCase()];
+                return empName.some((fullName) => fullName.includes(query));
+            })
+            console.log("newSearchArr", newSearchedArr);
+            this.setState({ filteredUsers: newSearchedArr });
+        } else { this.setState({ filteredUsers: filteredUsersBySearch }) }
+    };
 
     render() {
         return (
             <>
                 <Header loadUsers={this.loadUsers} />
                 <SearchInput handleInputChange={this.handleInputChange} />
-                <TableWithUsers users={this.state.users} handler={this.handler} />
+                <TableWithUsers handler={this.handler} filteredUsers={this.state.filteredUsers} />
             </>
         )
     }
 };
-
-// name={this.state.name}
 
 export default EmployeeDirectory;

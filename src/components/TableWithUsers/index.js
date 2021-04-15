@@ -16,7 +16,7 @@ function TableWithUsers(props) {
                 </tr>
             </thead>
             <tbody>
-                {props.users.map(result => (
+                {props.filteredUsers.map(result => (
                     <tr key={result.id}>
                         <td><img src={result.picture} alt={result.name} /></td>
                         <td>{result.name}</td>

@@ -8,7 +8,7 @@ function SearchInput(props) {
                 <div className="searchbar">
                     <input
                         onChange={props.handleInputChange}
-                        value={props.name}
+                        value={props.search}
                         className="search-input"
                         type="text"
                         name="search"
