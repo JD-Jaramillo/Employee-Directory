@@ -24,6 +24,7 @@ class EmployeeDirectory extends Component {
     // This hanler is sorting the names on click by Ascending and then by Descending order
     handler() {
         // Ascending 
+        console.log(this.state.nameColumnClick);
         const index = this.state.nameColumnClick + 1;
         switch (index) {
             case 1: {
@@ -100,10 +101,7 @@ class EmployeeDirectory extends Component {
         console.log("value is being received", query)
         const filteredUsersBySearch = [...this.state.users];
         if (query.length > 0) {
-            let newSearchedArr = filteredUsersBySearch.filter(user => {
-                const empName = [user.name[0].toLowerCase(), user.name[1].toLowerCase()];
-                return empName.some((fullName) => fullName.includes(query));
-            })
+            const newSearchedArr = filteredUsersBySearch.filter(user => user.name.toLowerCase().includes(query));
             console.log("newSearchArr", newSearchedArr);
             this.setState({ filteredUsers: newSearchedArr });
         } else { this.setState({ filteredUsers: filteredUsersBySearch }) }
